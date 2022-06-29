@@ -1,6 +1,7 @@
 <template>
     <div>
-        <div class="input-group">
+        <h2>Ricerca film o serie tv</h2>
+        <div class="input-group mb-3">
             <input type="text" class="rounded" v-model="searchTitle" @keyup.enter="searchMovieFunction">
             <button class="btn btn-success rounded ms-3" @click="searchMovieFunction">Cerca</button>
         </div>

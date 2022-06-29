@@ -4,7 +4,8 @@
             <li>Titolo film: {{ movie.title }}</li>
             <li>Titolo originale: {{ movie.original_title }}</li>
             <li>Lingua originale: <lang-flag :iso="movie.original_language" /></li>
-            <li>Voto: {{ movie.vote_average }}</li>
+            <li>Voto: <i class="fa-solid fa-star" v-for="vote in voteRounded(movie.vote_average)" :key="vote"></i>
+                    <i class="fa-regular fa-star" v-for="empty in emptyStar(voteRounded(movie.vote_average))" :key="empty"></i></li>
             <li><img :src="imgCover + movie.poster_path" :alt="movie.title"></li>
         </ul>
 
@@ -12,7 +13,8 @@
             <li>Titolo serie: {{ tv.name }}</li>
             <li>Titolo originale: {{ tv.original_name }}</li>
             <li>Lingua originale: <lang-flag :iso="tv.original_language" /></li>
-            <li>Voto: {{ tv.vote_average }}</li>
+            <li>Voto: <i class="fa-solid fa-star" v-for="vote in voteRounded(tv.vote_average)" :key="vote"></i>
+                    <i class="fa-regular fa-star" v-for="empty in emptyStar(voteRounded(tv.vote_average))" :key="empty"></i></li>
             <li><img :src="imgCover + tv.poster_path" :alt="tv.title"></li>
         </ul>
     </div>
@@ -37,6 +39,18 @@ export default {
             return state.seriesList;
         },
     },
+
+    methods: {
+        voteRounded(vote) {
+            const halfVote = vote / 2;
+            return Math.ceil(halfVote);
+        },
+
+        emptyStar(vote) {
+            const maxStar = 5;
+            return maxStar - vote;
+        }
+    }
 }
 
 </script>
