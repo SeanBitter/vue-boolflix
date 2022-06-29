@@ -9,6 +9,7 @@
 
 <script>
 import {searchMovies} from '../store'
+import {searchTv} from '../store'
 
 export default {
     data() {
@@ -19,8 +20,12 @@ export default {
 
     methods: {
         searchMovieFunction() {
-            searchMovies(this.searchTitle)
+            searchMovies(this.searchTitle);
+            searchTv(this.searchTitle);
+
+            this.searchTitle = "";
         },
+
     },
 }
 </script>

@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
+import LangFlag from 'vue-lang-code-flags';
 import "bootstrap";
+
+Vue.component('lang-flag', LangFlag);
 
 Vue.config.productionTip = false
 
