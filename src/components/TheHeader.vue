@@ -1,9 +1,11 @@
 <template>
-    <div>
-        <h2>Ricerca film o serie tv</h2>
-        <div class="input-group mb-3">
-            <input type="text" class="rounded" v-model="searchTitle" @keyup.enter="searchMovieFunction">
-            <button class="btn btn-success rounded ms-3" @click="searchMovieFunction">Cerca</button>
+    <div class="section">
+        <div class="container d-flex">
+            <div><h2 class="text-danger">BOOLFLIX</h2></div>
+            <div class="input-group d-flex justify-content-end">
+                <input type="text" class="rounded p-2" v-model="searchTitle" @keyup.enter="searchMovieFunction">
+                <button class="btn btn-danger rounded ms-3" @click="searchMovieFunction">Cerca</button>
+            </div>
         </div>
     </div>
 </template>
@@ -32,5 +34,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    .section {
+        background-color: black;
+        padding: 1rem 2rem;
+    };
 
 </style>

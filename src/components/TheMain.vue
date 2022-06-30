@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <TheCard></TheCard>
     </div>
 </template>
@@ -13,5 +13,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+    .container {
+        overflow-y: auto;
+    }
 </style>
